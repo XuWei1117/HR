@@ -1,0 +1,93 @@
+<select>
+    select * from employee,department
+    <where>
+        <if test="e_id!=null">e_id=#{e_id}</if>
+        <if test="e_name!=null and e_name!=''">and e_name=#{e_name}</if>
+        <if test="e_gender!=null and e_gender!=''">and e_gender=#{e_gender}</if>
+        <if test="e_age!=null">and e_age=#{e_age}</if>
+        and e_departId = d_id
+    </where>
+
+</select>
+<update>
+update employee set
+<if test="e_name != null and e_name != ''">e_name=#{e_name},</if>
+<if test="e_age != null">e_age=#{e_age},</if>
+<if test="e_gender != null and e_gender != '' ">e_gender=#{e_gender},</if>
+<if test="e_education != null and e_education != ''">e_education=#{e_e_education},</if>
+<if test="e_school != null and e_school != ''">e_school=#{e_school},</if>
+<if test="e_start != null and e_school != ''">e_start=#{e_start},</if>
+<if test="e_departId != null">e_departId=#{e_departId},</if>
+<if test="e_phone != null and e_phone != ''">e_phone=#{e_phone},</if>
+<if test="e_card != null and e_card != ''">e_card=#{e_card},</if>
+<if test="e_identity != null and e_identity != ''">e_identity=#{e_identity},</if>
+<if test="e_salary != null">e_salary=#{e_salary},</if>
+e_id = #{e_id}
+<where>e_id = #{e_id}</where>
+
+</update>
+
+<update>
+update department set
+<if test="d_name != null and d_name != ''">d_name=#{d_name},</if>
+<if test="d_manager != null and d_manager != ''">d_manager=#{d_manager},</if>
+<if test="d_phone != null and d_phone != ''">d_phone=#{d_phone},</if>
+d_id=#{d_id}
+<where>d_id=#{d_id}</where>
+
+</update>
+<select>
+select * from department
+<where>
+    <if test="d_id != null">d_id=#{d_id}</if>
+    <if test="d_name != null and d_name != ''">d_name=#{d_name}</if>
+    <if test="d_manager != null and d_manager != '' ">d_phone=#{d_phone}</if>
+</where>
+</select>
+
+<update>
+update recruit set
+<if test="r_position != null and r_position != ''">r_position=#{r_position},</if>
+<if test="r_count != null">r_count=#{r_count},</if>
+<if test="r_departId != null ">r_departId=#{r_departId},</if>
+<if test="r_experience != null and r_experience != ''">r_experience=#{r_experience},</if>
+<if test="r_gender != null and r_gender != ''">r_gender=#{r_gender},</if>
+<if test="r_gender != null and r_gender != ''">r_gender=#{r_gender},</if>
+<if test="min_age!= null ">min_age=#{min_age},</if>
+<if test="max_age != null">max_age=#{max_age},</if>
+<if test="min_salary!= null ">min_salary=#{min_salary},</if>
+<if test="max_salary != null">max_salary=#{max_salary},</if>
+<if test="r_empId != null">r_empId=#{r_empId},</if>
+r_id=#{r_id}
+<where>r_id=#{r_id}</where>
+</update>
+
+
+<update>
+update candidate set
+<if test="c_name != null and c_name != ''">c_name=#{c_name},</if>
+<if test="c_age != null">c_age=#{c_age},</if>
+<if test="c_gender != null and c_gender != '' ">c_gender=#{c_gender},</if>
+<if test="c_education != null and c_education != ''">c_education=#{c_e_education},</if>
+<if test="c_school != null and c_school != ''">c_school=#{c_school},</if>
+<if test="c_start != null and c_school != ''">c_start=#{c_start},</if>
+<if test="c_departId != null">c_departId=#{c_departId},</if>
+<if test="c_phone != null and c_phone != ''">c_phone=#{c_phone},</if>
+<if test="c_card != null and c_card != ''">c_card=#{c_card},</if>
+<if test="c_identity != null and c_identity != ''">c_identity=#{c_identity},</if>
+<if test="c_salary != null">c_salary=#{c_salary},</if>
+c_id = #{c_id}
+<where>c_id = #{c_id}</where>
+</update>
+
+<select>
+select * from recruit,department where r_departId=d_id
+<where>
+    <if test="r_id!=null">r_id like '%#{r_id}%'</if>
+    <if test="r_position!=null and r_position!=''">r_position like '%#{r_position}%'</if>
+    <if test="r_count!=null">r_count like '%#{r_count}%'</if>
+    <if test="d_name!=null and d_name!=''">d_name like '%#{d_name}%'</if>
+    <if test="r_experience!=null and r_experience!=''">r_experience like '%#{r_experience}%'</if>
+    <if test="r_gender!=null and r_gender!=''">r_gender like '%#{r_gender}%'</if>
+</where>
+</select>

@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f0f5f5;
+}
+.container{
+    margin-top: 30px;
+}
+.box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 560px;
+    border-radius: 10px;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transition: all 0.5s;
+    user-select: none;
+
+}
+.login{
+    background: aqua;
+}
+.signup{
+    background-color: lightpink;
+    transform: rotateY(-108deg);
+}
+/*
+.container .form-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 0 1px #3399ff;
+    border-radius: 30px;
+   !* background-color: #fff;*!
+}*/
+.container .form-content .avtar{
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.container .form-content .avtar .pic {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #3399ff;
+    left: 153px;
+}
+.container .form-content .avtar .pic img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-primary{
+    width: 200px;
+    color: #fff;
+    background-color: #0066ff;
+    border-color: #204d74;
+}
+/*
+.fa {
+    margin-left: 88px;
+}*/
